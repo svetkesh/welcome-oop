@@ -1,11 +1,11 @@
 # welcome-oop
 This project demonstrates some Python OOP concepts and functional programming approach.
 
-_war.py_ is 'controler' and 'view' for this application.
+_war.py_ is **'controler'** and **'view'** for this application.
 
-_model.py_ handles data structures for application. 
+_model.py_ handles data structures for application and implements **'model'** part. 
 
-Clases Card, Hand and Playerin model.py are models for objects used in the game.
+Clases: Card, Hand and Player in model.py are models for objects used in the game.
 
 Truly speaking this project follows implementation task in beautiful Udemy course
 'Python and Django Full Stack Web Developer Bootcamp' by Jose Portilla:
