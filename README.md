@@ -16,6 +16,7 @@ It demonstrates some Python OOP concepts and also functional
 programming approach.
 
 There are some features you can find here:
+
 class,
 inheritance,
 method overiding,
