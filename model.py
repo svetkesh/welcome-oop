@@ -8,7 +8,7 @@ This project was derived withing solving task in beautiful Udemy course
 https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/learn/
 
 This module demonstrates some Python OOP concepts and also functional
-programming aproach.
+programming approach.
 
 There are some features you can find here:
 class,
@@ -355,3 +355,6 @@ def init_game():
     table = Player("Table")
 
     return table, players
+
+if __name__ =="__main__":
+    print("Please import classes from this module or init_game()")
