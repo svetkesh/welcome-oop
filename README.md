@@ -7,8 +7,9 @@ _model.py_ handles data structures for application and implements **'model'** pa
 
 Clases: Card, Hand and Player in model.py are models for objects used in the game.
 
-Truly speaking this project follows implementation task in beautiful Udemy course
-'Python and Django Full Stack Web Developer Bootcamp' by Jose Portilla:
+Truly speaking this project implements solution of the problem in beautiful Udemy course
+
+'Python and Django Full Stack Web Developer Bootcamp' by Jose Portilla.
 
 https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/learn/
 
