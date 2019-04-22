@@ -1,16 +1,29 @@
+#!/usr/bin/env python3
+
 """
 Manages all data user in card game 'war'
 
 Clases Card, Hand and Player are models for objects used in the game.
 
-This project was derived withing solving task in beautiful Udemy course
+This project demonstrates some Python OOP concepts and functional programming approach.
+
+_war.py_ is **'controler'** and **'view'** for this application.
+
+_model.py_ handles data structures for application and implements **'model'** part.
+
+Clases: Card, Hand and Player in model.py are models for objects used in the game.
+
+Truly speaking this project implements solution of the problem in beautiful Udemy course
+
 'Python and Django Full Stack Web Developer Bootcamp' by Jose Portilla.
+
 https://www.udemy.com/python-and-django-full-stack-web-developer-bootcamp/learn/
 
-This module demonstrates some Python OOP concepts and also functional
+It demonstrates some Python OOP concepts and also functional
 programming approach.
 
 There are some features you can find here:
+
 class,
 inheritance,
 method overiding,
@@ -20,39 +33,46 @@ raise and handle Exceptions,
 pass-by-reference,
 iterator example,
 generator,
-@decarator,
-*args, **kwargs,
+@decorator,
+*args, * * kwargs,
 list comprehension,
 Python packaging,
 modules,
-__slots__,
+_ _ slots _ _,
 magic functions,
 print formatting,
 documentation,
 and much more...
 
 Hope I'll expand this with:
-implementing MVC (sounds like a joke but it worth)
-@staticmethod and @classmethod (first in the row)
-__hash__
-implement decorator for class as once I've found in explanation about ABC
-wrap with tests
 
-Thanks a lot!
+implementing MVC (sounds like a joke but it worth)
+
+@staticmethod and @classmethod (first in the row)
+
+_ _ hash _ _
+
+implement decorator for class as once I've found in explanation about ABC
+
+wrap with tests
 
 
 """
 
 from functools import wraps
-
 # from collections import Iterable
 # Python_Level_Two/playground/model.py:2: DeprecationWarning: Using or
 # importing the ABCs from 'collections' instead of from 'collections.abc'
 # is deprecated, and in 3.8 it will stop working
 from collections.abc import Iterable
+import configparser
 
-SUITE = ['H', 'D', 'S', 'C']
-RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+NUMBER_OF_PAYERS = int(config['DEFAULT']['NUMBER_OF_PAYERS'])
+SUITE = config['DEFAULT']['SUITE'].split(',')
+RANKS = config['DEFAULT']['RANKS'].split(',')
 
 
 class Card():
@@ -350,11 +370,14 @@ def init_game():
     cards_deck = cards_generator()
     players = list(Player(x) for x in ("PlayerA","PlayerB"))
     for player in players:
-        player.cards = list(next(cards_deck) for x in range (26))
+        player.cards = list(next(cards_deck) for x in range(int(len(RANKS)*len(SUITE)/NUMBER_OF_PAYERS)))
 
     table = Player("Table")
 
     return table, players
 
 if __name__ =="__main__":
+    """
+    https://stackoverflow.com/questions/419163/what-does-if-name-main-do
+    """
     print("Please import classes from this module or init_game()")
