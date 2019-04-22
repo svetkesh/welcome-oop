@@ -380,4 +380,4 @@ if __name__ =="__main__":
     """
     https://stackoverflow.com/questions/419163/what-does-if-name-main-do
     """
-    print("Please import classes from this module or init_game()")
+    print("This module is data model for card game.")
