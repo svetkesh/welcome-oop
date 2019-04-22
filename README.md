@@ -36,6 +36,7 @@ _ _ slots _ _,
 magic functions,
 print formatting,
 documentation,
+configparser,
 and much more...
 
 Hope I'll expand this with:
